@@ -5,7 +5,7 @@ import { Trips } from './components/Trips/Trips';
 import './App.css';
 
 const App = () => {
-  const [trips, setTrips] = useState([{ city: "Berlin", startDate: "17.07.2023", endDate: "21.07.2023" }, { city: "Tokyo", startDate: "17.07.2023", endDate: "21.07.2023" }])
+  const [trips, setTrips] = useState([{ id: 1, city: "Berlin", startDate: "17.07.2023", endDate: "21.07.2023" }, { id: 2, city: "Tokyo", startDate: "17.07.2023", endDate: "21.07.2023" }])
   const [openForm, setOpenForm] = useState(false)
   return <div>
     <h1>Weather <strong>Forecast</strong></h1>
