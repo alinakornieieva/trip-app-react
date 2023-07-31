@@ -1,0 +1,57 @@
+.trip-form {
+  background-color: #fff;
+  border: 2px solid rgb(240, 239, 239);
+  width: 40%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+.trip-form h3 {
+  padding: 10px;
+}
+
+.trip-form .inputs {
+  padding: 40px 10px 20px;
+}
+
+.trip-form .inputs .flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-form .inputs .btns {
+  display: flex;
+  justify-content: end;
+}
+
+.trip-form .inputs div input,
+select {
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.trip-form .necessarily {
+  color: red;
+}
+
+.trip-form button {
+  padding: 3px 8px;
+  height: 25px;
+  border-radius: 2px;
+  margin-top: 40px;
+}
+
+.trip-form .cancel-btn {
+  background-color: #fff;
+  border: 0.5px solid grey;
+  margin-right: 5px;
+}
+
+.trip-form .save-btn {
+  color: #fff;
+  background-color: rgb(46, 145, 244);
+  border: none;
+}
