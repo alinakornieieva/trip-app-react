@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import './Form.css'
 
-export const Form = () => {
+export const Form = ({ openForm, setOpenForm }) => {
     const [city, setCity] = useState("")
-    return <form className="trip-form">
+    const cancel = (e) => {
+        e.preventDefault()
+        setOpenForm(false)
+    }
+    return <form className={`trip-form ${openForm || 'hidden'}`}>
         <h3>Create trip</h3>
         <hr />
         <div className='inputs'>
@@ -30,7 +34,7 @@ export const Form = () => {
                     onBlur={(e) => (e.target.type = "text")} placeholder="Select date" />
             </div>
             <div className="btns">
-                <button className='cancel-btn'>Cancel</button>
+                <button onClick={cancel} className='cancel-btn'>Cancel</button>
                 <button className='save-btn'>Save</button>
             </div>
         </div>

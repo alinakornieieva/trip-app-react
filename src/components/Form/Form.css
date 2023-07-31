@@ -1,3 +1,7 @@
+.hidden {
+  display: none;
+}
+
 .trip-form {
   background-color: #fff;
   border: 2px solid rgb(240, 239, 239);

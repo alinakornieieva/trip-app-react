@@ -1,0 +1,17 @@
+.trips {
+  display: flex;
+  margin: 30px 0;
+}
+
+.add-new {
+  background-color: rgba(237, 234, 234, 0.5);
+  width: 300px;
+  height: 200px;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+}
