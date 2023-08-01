@@ -1,0 +1,11 @@
+.forecast {
+  display: flex;
+  margin-top: 20px;
+}
+
+.forecast-card {
+  text-align: center;
+  margin-right: 10px;
+  background-color: rgba(237, 234, 234, 0.5);
+  padding: 15px;
+}
