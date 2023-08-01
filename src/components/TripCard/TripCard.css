@@ -7,3 +7,15 @@
   width: 300px;
   height: 200px;
 }
+
+.card h4 {
+  margin-bottom: 10px;
+}
+
+.card div {
+  padding: 15px;
+}
+
+.selected {
+  border: 2px solid rgb(25, 142, 244);
+}
