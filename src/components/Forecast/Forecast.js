@@ -12,7 +12,7 @@ export const Forecast = ({ forecast }) => {
             <div className='forecast'>
                 {forecast.map((day) => <div className="forecast-card" key={day.datetime}>
                     <p>{convert(day.datetime)}</p>
-                    <img src={images(`./${day.icon}.png`)} alt="" />
+                    <img src={images(`./${day.icon}.png`)} alt={day.icon} />
                     <p>{Math.round(day.tempmax)}°C/{Math.round(day.tempmin)}°C</p>
                 </div>)}
             </div></>

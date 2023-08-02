@@ -8,12 +8,10 @@ export const Search = ({ setFilteredTrips, trips }) => {
             if (e.target.value === '') {
                 return el;
             }
-            //return the item which contains the user input
             else {
                 return el.city.toLowerCase().startsWith(search.toLowerCase())
             }
         })
-            // (prev) => prev.filter((item) => item.city.toLowerCase().startsWith(search.toLowerCase()))
         )
     }
     return <div>
