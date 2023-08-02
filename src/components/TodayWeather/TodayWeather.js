@@ -1,7 +1,8 @@
+import { CountdownTimer } from '../CountdownTimer/CountdownTimer';
 import './TodayWeather.css'
 const images = require.context('../../icons', true);
 
-export const TodayWeather = ({ todayWeather }) => {
+export const TodayWeather = ({ todayWeather, trip }) => {
     const days = [
         "Sunday",
         "Monday",
@@ -10,7 +11,7 @@ export const TodayWeather = ({ todayWeather }) => {
         "Thursday",
         "Friday",
         "Saturday",
-    ];
+    ]
     const day = days[new Date().getDay()]
     return <>
         {todayWeather && <div className='today-weather'>
@@ -20,8 +21,9 @@ export const TodayWeather = ({ todayWeather }) => {
                     <img src={images(`./${todayWeather.days[0].icon}.png`)} alt={todayWeather.days[0].icon} />
                     <p><span className='temp'>{Math.round(todayWeather.days[0].temp)}</span><span className='celsuis'>°C</span></p>
                 </div>
-                <p>{todayWeather.address}</p>
+                <p className='adress'>{todayWeather.address}</p>
             </div>
+            <CountdownTimer targetDate={trip.startDate} />
         </div>}
     </>
 }

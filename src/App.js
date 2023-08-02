@@ -34,7 +34,7 @@ const App = () => {
   }, [trip]);
   const [openForm, setOpenForm] = useState(false)
   return <>
-    <TodayWeather todayWeather={todayWeather} />
+    <TodayWeather todayWeather={todayWeather} trip={trip} />
     <div className='container'>
       <h1>Weather <strong>Forecast</strong></h1>
       <Search setFilteredTrips={setFilteredTrips} trips={trips} />
