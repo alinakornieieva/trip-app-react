@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { data } from '../../data'
 import './Form.css'
 
 export const Form = ({ openForm, setOpenForm, setTrips }) => {
@@ -17,9 +18,22 @@ export const Form = ({ openForm, setOpenForm, setTrips }) => {
     }
     const submitForm = (e) => {
         e.preventDefault()
-        setTrips((prev) => [...prev, { id: Date.now(), city, startDate, endDate }])
-        cleanForm()
-        setOpenForm(false)
+        const checkData = () => {
+            let result = new Date()
+            result.setDate(result.getDate() + 15)
+            return result.toISOString().split("T")[0]
+        }
+        const admissible = checkData()
+        if (!startDate || !endDate || !city) {
+            alert('All fields should be filled')
+        }
+        else if (startDate > admissible || endDate > admissible) {
+            alert('The start date and the end date should be within the next 15 days')
+        } else {
+            setTrips((prev) => [...prev, { id: Date.now(), city, startDate, endDate }])
+            cleanForm()
+            setOpenForm(false)
+        }
     }
     return <form className={`trip-form ${openForm || 'hidden'}`} onSubmit={submitForm}>
         <h3>Create trip</h3>
@@ -29,9 +43,7 @@ export const Form = ({ openForm, setOpenForm, setTrips }) => {
                 <label htmlFor="city"><span className='necessarily'>*</span> City</label>
                 <select name="city" id="city" value={city} onChange={(e) => setCity(e.target.value)}>
                     <option value="" disabled hidden>Please select a city</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Tokyo">Tokyo</option>
-                    <option value="Barcelona">Barcelona</option>
+                    {data.map((item) => <option value={item.city} key={item.city}>{item.city}</option>)}
                 </select>
             </div>
             <div className='flex'>
