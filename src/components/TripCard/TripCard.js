@@ -14,7 +14,7 @@ export const TripCard = ({ info, setTrip, trip }) => {
     const start = convert(startDate)
     const end = convert(endDate)
     const index = images.findIndex((img) => img.city === city)
-    return <div onClick={() => setTrip(info)} className={`card ${trip?.city === info.city && 'selected'}`}>
+    return <div onClick={() => setTrip(info)} className={`card ${trip?.id === info.id && 'selected'}`}>
         <img src={images[index].imageUrl} alt={city} />
         <div>
             <h4>{city}</h4>
