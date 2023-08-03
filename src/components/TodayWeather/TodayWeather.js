@@ -1,4 +1,4 @@
-import { CountdownTimer } from '../CountdownTimer/CountdownTimer';
+import Timer from '../Timer/Timer';
 import './TodayWeather.css'
 const images = require.context('../../icons', true);
 
@@ -23,7 +23,7 @@ export const TodayWeather = ({ todayWeather, trip }) => {
                 </div>
                 <p className='adress'>{todayWeather.address}</p>
             </div>
-            <CountdownTimer targetDate={trip.startDate} />
+            <Timer deadline={trip.startDate} />
         </div>}
     </>
 }
