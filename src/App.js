@@ -18,7 +18,7 @@ const useDidMountEffect = (func, deps) => {
 };
 
 const App = () => {
-  const [trips, setTrips] = useState([{ id: 1, city: "Berlin", startDate: "2023-07-17", endDate: "2023-07-26" }, { id: 2, city: "Tokyo", startDate: "2023-08-01", endDate: "2023-08-07" }])
+  const [trips, setTrips] = useState([{ id: 1, city: "Berlin", startDate: "2023-08-05", endDate: "2023-08-10" }])
   const [filteredTrips, setFilteredTrips] = useState(trips)
   const [todayWeather, setTodayWeather] = useState(null)
   useEffect(() => {

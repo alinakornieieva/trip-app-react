@@ -5,6 +5,11 @@
 
 .cards {
   display: flex;
+  max-width: 640px;
+}
+
+.scroll {
+  overflow-x: scroll;
 }
 
 .add-new {

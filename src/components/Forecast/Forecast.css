@@ -9,3 +9,8 @@
   background-color: rgba(237, 234, 234, 0.5);
   padding: 15px;
 }
+
+.changed-width {
+  overflow-x: scroll;
+  max-width: 70%;
+}

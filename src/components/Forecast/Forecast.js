@@ -9,7 +9,7 @@ export const Forecast = ({ forecast }) => {
     return <>
         {forecast && <>
             <h2>Week</h2>
-            <div className='forecast'>
+            <div className={`forecast ${forecast.length > 8 && 'changed-width'}`}>
                 {forecast.map((day) => <div className="forecast-card" key={day.datetime}>
                     <p>{convert(day.datetime)}</p>
                     <img src={images(`./${day.icon}.png`)} alt={day.icon} />

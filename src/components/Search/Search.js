@@ -9,7 +9,7 @@ export const Search = ({ setFilteredTrips, trips }) => {
                 return el;
             }
             else {
-                return el.city.toLowerCase().startsWith(search.toLowerCase())
+                return el.city.toLowerCase().startsWith(e.target.value.toLowerCase())
             }
         })
         )
