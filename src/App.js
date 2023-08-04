@@ -31,8 +31,16 @@ const App = () => {
   useDidMountEffect(() => {
     fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${trip.city}/${trip.startDate}/${trip.endDate}?unitGroup=metric&include=days&key=${process.env.REACT_APP_WEATHER_API}&contentType=json`)
       .then((data) => data.json()).then((result) => setForecast(result.days))
+      .catch((e) => {
+        alert('Something went wrong')
+        console.error(e)
+      })
     fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${trip.city}/today?unitGroup=metric&include=days&key=${process.env.REACT_APP_WEATHER_API}&contentType=json`)
       .then((data) => data.json()).then((result) => setTodayWeather(result))
+      .catch((e) => {
+        alert('Something went wrong')
+        console.error(e)
+      })
   }, [trip]);
   return <>
     <TodayWeather todayWeather={todayWeather} trip={trip} />
