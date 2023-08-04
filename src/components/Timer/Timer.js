@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState, memo } from "react";
+import { useEffect, useCallback, useState, memo } from "react"
 import './Timer.css'
 
 const getDays = (time) => Math.floor(time / (1000 * 60 * 60 * 24))
@@ -31,7 +31,6 @@ const Timer = ({ deadline }) => {
     }, [])
     useEffect(() => {
         const timerRef = setInterval(() => getTimeUntil(deadline), 1000)
-
         return () => {
             clearInterval(timerRef)
             getTimeUntil(deadline)

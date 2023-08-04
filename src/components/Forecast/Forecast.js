@@ -1,5 +1,5 @@
 import './Forecast.css'
-const images = require.context('../../icons', true);
+const images = require.context('../../icons', true)
 
 export const Forecast = ({ forecast }) => {
     const convert = (date) => {

@@ -3,8 +3,8 @@ import { Form } from './components/Form/Form';
 import { Search } from './components/Search/Search';
 import { Trips } from './components/Trips/Trips';
 import { Forecast } from './components/Forecast/Forecast';
-import './App.css';
 import { TodayWeather } from './components/TodayWeather/TodayWeather';
+import './App.css';
 
 const useDidMountEffect = (func, deps) => {
   const didMount = useRef(false);
@@ -18,21 +18,22 @@ const useDidMountEffect = (func, deps) => {
 };
 
 const App = () => {
-  const [trips, setTrips] = useState([{ id: 1, city: "Berlin", startDate: "2023-08-05", endDate: "2023-08-10" }])
+  const [trips, setTrips] = useState(JSON.parse(localStorage.getItem('data')) || [{ id: 1, city: "Berlin", startDate: "2023-08-10", endDate: "2023-08-16" }])
   const [filteredTrips, setFilteredTrips] = useState(trips)
   const [todayWeather, setTodayWeather] = useState(null)
-  useEffect(() => {
-    setFilteredTrips(trips)
-  }, [trips])
   const [trip, setTrip] = useState(null);
   const [forecast, setForecast] = useState(null);
+  const [openForm, setOpenForm] = useState(false)
+  useEffect(() => {
+    setFilteredTrips(trips)
+    localStorage.setItem('data', JSON.stringify(trips))
+  }, [trips])
   useDidMountEffect(() => {
     fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${trip.city}/${trip.startDate}/${trip.endDate}?unitGroup=metric&include=days&key=${process.env.REACT_APP_WEATHER_API}&contentType=json`)
       .then((data) => data.json()).then((result) => setForecast(result.days))
     fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${trip.city}/today?unitGroup=metric&include=days&key=${process.env.REACT_APP_WEATHER_API}&contentType=json`)
       .then((data) => data.json()).then((result) => setTodayWeather(result))
   }, [trip]);
-  const [openForm, setOpenForm] = useState(false)
   return <>
     <TodayWeather todayWeather={todayWeather} trip={trip} />
     <div className='container'>

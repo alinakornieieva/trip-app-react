@@ -1,6 +1,6 @@
-import Timer from '../Timer/Timer';
+import Timer from '../Timer/Timer'
 import './TodayWeather.css'
-const images = require.context('../../icons', true);
+const images = require.context('../../icons', true)
 
 export const TodayWeather = ({ todayWeather, trip }) => {
     const days = [
