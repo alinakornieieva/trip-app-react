@@ -1,10 +1,5 @@
-export const data = [{
-    city: "Berlin",
-    imageUrl: "https://s7g10.scene7.com/is/image/stena/20150820_berlin-brandenburg-gate:16-9?ts=1656740748478&dpr=off"
-}, {
-    city: "Tokyo",
-    imageUrl: "https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2020/05/akihabara-iStock-484915982-1024x600.jpg"
-},
+export const data = [{ city: "Berlin", imageUrl: "https://s7g10.scene7.com/is/image/stena/20150820_berlin-brandenburg-gate:16-9?ts=1656740748478&dpr=off" },
+{ city: "Tokyo", imageUrl: "https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2020/05/akihabara-iStock-484915982-1024x600.jpg" },
 { city: "Barcelona", imageUrl: "https://static.independent.co.uk/2023/03/10/14/iStock-1320014700.jpg?width=1200&height=900&fit=crop" },
 { city: "London", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/67/London_Skyline_%28125508655%29.jpeg" },
 { city: "New York", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg" },
@@ -18,6 +13,5 @@ export const data = [{
 { city: "Amsterdam", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/KeizersgrachtReguliersgrachtAmsterdam.jpg/1200px-KeizersgrachtReguliersgrachtAmsterdam.jpg" },
 { city: "Toronto", imageUrl: "https://cdn.britannica.com/93/94493-050-35524FED/Toronto.jpg" },
 { city: "Kyiv", imageUrl: "https://www.globsec.org/sites/default/files/styles/inline/public/2022-10/AdobeStock_237922991-scaled-e1666004413531.jpeg?itok=oRrVvn-5" },
-{ city: "Warsaw", imageUrl: "https://s.inyourpocket.com/img/text/poland/warsaw/warsaw-city-centre_drone-in-warsaw-2.jpg" },
-
+{ city: "Warsaw", imageUrl: "https://s.inyourpocket.com/img/text/poland/warsaw/warsaw-city-centre_drone-in-warsaw-2.jpg" }
 ]
